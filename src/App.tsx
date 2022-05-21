@@ -1,43 +1,88 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import "./App.css";
-import drawer from "./menu/drawer";
 import { Container } from "./utils/Container";
-import Intro from "./pages/Introduccion";
 import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
-import { StarBorder, ExpandMore, ExpandLess } from "@mui/icons-material";
-import { ListItemIcon, Collapse } from "@mui/material";
+import { ExpandMore, ExpandLess } from "@mui/icons-material";
+import { Collapse } from "@mui/material";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const drawerWidth = 260;
+const listConocimientos = [
+  "Ubicación",
+  "Historia",
+  "Flora",
+  "Fauna",
+  "Problemática actual",
+  "Resguardos indígenas",
+];
 
-export const App = ({ window }: { window?: () => Window }) => {
+export const App = ({
+  window,
+  Element,
+}: {
+  window?: () => Window;
+  Element: JSX.Element;
+}) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [open, setOpen] = React.useState(true);
+  const [openConocimiento, setOpenConocimiento] = React.useState(false);
+  const [openDivision, setOpenDivision] = React.useState(false);
+  const [openEducando, setOpenEducando] = React.useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleClick = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
+  const isMobile =
+    window !== undefined ? () => window().document.body : undefined;
+  console.log(isMobile);
+  switch (location.pathname) {
+    case "/Introduccion":
+      document.getElementsByClassName("active") &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#intro")?.classList.add("active");
+      break;
+    case "/conocimiento":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#conocimiento")?.classList.add("active");
+      break;
+    case "/Educando":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#Educando")?.classList.add("active");
+      break;
+
+    default:
+      break;
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
   return (
     <>
-      <Box sx={{ display: "flex", backgroundColor: "#072E26" }}>
+      <Box
+        sx={{
+          display: "flex",
+          backgroundColor: "#072E26",
+          position: "relative",
+        }}
+      >
         <AppBar
           position="fixed"
           sx={{
@@ -94,10 +139,12 @@ export const App = ({ window }: { window?: () => Window }) => {
           </Toolbar>
         </AppBar>
         <List
-          component="nav"
           sx={{
             width: drawerWidth,
             backgroundColor: "#072E26",
+            height: "100vh",
+            overflowY: "scroll",
+            position: "fixed",
           }}
         >
           <Typography
@@ -131,54 +178,191 @@ export const App = ({ window }: { window?: () => Window }) => {
             CREANDO CONCIENCIA
           </Typography>
 
-          <ListItemButton sx={{ backgroundColor: "#0D5043" }}>
-            <ListItemText primary={"Introducción"} sx={{ color: "white" }} />
+          <ListItemButton onClick={() => navigate("/Introduccion")}>
+            <ListItemText
+              id="intro"
+              primary={"Introducción"}
+              sx={{ color: "white" }}
+            />
           </ListItemButton>
           <ListItem key={"Conociendo"} disablePadding>
-            <ListItemButton onClick={handleClick}>
-              <ListItemText primary="Conociendo" sx={{ color: "white" }} />
-              {open ? (
+            <ListItemButton
+              onClick={() => {
+                setOpenConocimiento((prevOpen) => !prevOpen);
+                openEducando && setOpenEducando(false);
+                navigate("/conocimiento");
+              }}
+            >
+              <ListItemText
+                id="conocimiento"
+                primary="Conociendo"
+                sx={{ color: "white" }}
+              />
+              {openConocimiento ? (
                 <ExpandLess sx={{ color: "white" }} />
               ) : (
                 <ExpandMore sx={{ color: "white" }} />
               )}
             </ListItemButton>
           </ListItem>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={openConocimiento} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Ubicación" sx={{ color: "white" }} />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Hsitoria" sx={{ color: "white" }} />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="FLora" sx={{ color: "white" }} />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Fauna" sx={{ color: "white" }} />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText
-                  primary="Problemática actual"
-                  sx={{ color: "white" }}
-                />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText
-                  primary="Resguardos indígenas"
-                  sx={{ color: "white" }}
-                />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText
-                  sx={{ color: "white" }}
-                  primary="División politico territorial de los resguardos firmantes del convenio"
-                />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Ubicación" sx={{ color: "white" }} />
-              </ListItemButton>
+              {listConocimientos.map((text) => (
+                <ListItem key={text}>
+                  <ListItemButton sx={{ pl: 2 }}>
+                    <ListItemText
+                      primary={text}
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+              <ListItem key={"division"}>
+                <ListItemButton
+                  onClick={() => setOpenDivision((prevOpen) => !prevOpen)}
+                >
+                  <ListItemText
+                    primary="División politico territorial de los resguardos firmantes del convenio"
+                    sx={{
+                      color: "white",
+                      borderLeft: "3px solid #0C453A",
+                      pl: 1,
+                    }}
+                  />
+                  {openDivision ? (
+                    <ExpandLess sx={{ color: "white" }} />
+                  ) : (
+                    <ExpandMore sx={{ color: "white" }} />
+                  )}
+                </ListItemButton>
+              </ListItem>
+              <Collapse in={openDivision} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguado Ríos Tomo y Beweri"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguardo San Luis del Tomo"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguardo La Esmeralda"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguardo Valdivia"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguardo Punta Bandera"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguardo Kawaneruba"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguardo Ríos Muco y Guarrojo"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                  <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemText
+                      primary="Resguardo Ríos Muco y Guarrojo"
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                </List>
+              </Collapse>
+            </List>
+          </Collapse>
+          <ListItem key={"Educando"} disablePadding>
+            <ListItemButton
+              onClick={() => {
+                setOpenEducando((prevOpen) => !prevOpen);
+                openConocimiento && setOpenConocimiento(false);
+                openDivision && setOpenDivision(false);
+                navigate("/Educando");
+              }}
+            >
+              <ListItemText
+                id="Educando"
+                primary="Educando"
+                sx={{ color: "white" }}
+              />
+              {openEducando ? (
+                <ExpandLess sx={{ color: "white" }} />
+              ) : (
+                <ExpandMore sx={{ color: "white" }} />
+              )}
+            </ListItemButton>
+          </ListItem>
+          <Collapse in={openEducando} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {listConocimientos.map((text) => (
+                <ListItem key={text}>
+                  <ListItemButton sx={{ pl: 2 }}>
+                    <ListItemText
+                      primary={text}
+                      sx={{
+                        color: "white",
+                        borderLeft: "3px solid #0C453A",
+                        pl: 1,
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              ))}
             </List>
           </Collapse>
 
@@ -269,25 +453,26 @@ export const App = ({ window }: { window?: () => Window }) => {
           >
             QUIENES SOMOS
           </Typography>
-          {["Team", "Redes sociales"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                {/*               <ListItemIcon>
-                {index % 2 === 0 ? (
-                  <InboxIcon sx={{ color: "white" }} />
-                ) : (
-                  <MailIcon sx={{ color: "white" }} />
-                )}
-              </ListItemIcon> */}
-                <ListItemText primary={text} sx={{ color: "white" }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+
+          <ListItem key={"Team"} disablePadding>
+            <ListItemButton>
+              <ListItemText primary="Team" sx={{ color: "white" }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem
+            key={"Redes sociales"}
+            sx={{ marginBottom: 5 }}
+            disablePadding
+          >
+            <ListItemButton>
+              <ListItemText primary="Redes sociales" sx={{ color: "white" }} />
+            </ListItemButton>
+          </ListItem>
         </List>
         <Container
           drawerWidth={drawerWidth}
           page="introduccion"
-          Element={Intro}
+          Element={Element}
         />
       </Box>
     </>

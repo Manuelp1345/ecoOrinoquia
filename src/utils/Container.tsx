@@ -8,7 +8,7 @@ export const Container = ({
 }: {
   drawerWidth: number;
   page: string;
-  Element: () => JSX.Element;
+  Element: JSX.Element;
 }) => {
   return (
     <>
@@ -20,7 +20,6 @@ export const Container = ({
           background:
             "linear-gradient(97.52deg, #002F46 12.98%, #106756 71.35%);",
           color: "#37C7AB",
-          height: "80em",
           overflow: "hidden",
         }}
       >
@@ -34,11 +33,12 @@ export const Container = ({
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
+            marginLeft: 26.5,
           }}
           component={"div"}
         >
           {/*  {page === "introduccion" && <Intro />} */}
-          {Element()}
+          {Element}
         </Box>
       </Box>
     </>

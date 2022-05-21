@@ -2,7 +2,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { ArrowRightAlt } from "@mui/icons-material";
-import { Button } from "@mui/material";
 
 const Intro = () => {
   return (
@@ -64,23 +63,26 @@ const Intro = () => {
       </Typography>
 
       <Box
+        className="btnContent"
         padding={3}
+        component={"div"}
         sx={{
           background: "#0D5043",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          cursor: "pointer",
+          textDecoration: "none",
+          color: "#7DDFCC",
         }}
       >
-        <Box zIndex={"999"}>
+        <Box>
           <Typography variant="subtitle2">
             Próximo - Creando conciencia
           </Typography>
           <Typography variant="subtitle1">Conociendo</Typography>
         </Box>
-        <Button>
-          <ArrowRightAlt sx={{ fontSize: "45px", color: "#37C7AB" }} />
-        </Button>
+        <ArrowRightAlt sx={{ fontSize: "45px", color: "#37C7AB" }} />
       </Box>
 
       <Box

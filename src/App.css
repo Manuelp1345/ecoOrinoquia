@@ -17,3 +17,6 @@
 .active {
   color: #37c7ab !important;
 }
+.btnContent:hover {
+  background-color: rgb(12, 71, 59) !important;
+}

@@ -15,7 +15,18 @@ export const Container = ({
       <Box
         component="main"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          display: { xs: "none", sm: "block" },
+          width: "100%",
+          flexGrow: 1,
+          background:
+            "linear-gradient(97.52deg, #002F46 12.98%, #106756 71.35%);",
+          color: "#37C7AB",
+          overflow: "hidden",
+        }}
+      ></Box>
+      <Box
+        component="main"
+        sx={{
           flexGrow: 1,
           background:
             "linear-gradient(97.52deg, #002F46 12.98%, #106756 71.35%);",
@@ -25,7 +36,7 @@ export const Container = ({
       >
         <Box
           sx={{
-            marginTop: { sm: 16 },
+            marginTop: { sm: 17 },
             paddingLeft: { sm: "78px" },
             p: 3,
             height: "100%",
@@ -33,11 +44,9 @@ export const Container = ({
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            marginLeft: 26.5,
           }}
           component={"div"}
         >
-          {/*  {page === "introduccion" && <Intro />} */}
           {Element}
         </Box>
       </Box>

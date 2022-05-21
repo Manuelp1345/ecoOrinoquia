@@ -8,7 +8,9 @@ const Intro = () => {
   return (
     <>
       <Toolbar />
-      <Typography fontSize={"40px"}>Introducción</Typography>
+      <Typography marginTop={{ xs: 10, sm: 0 }} fontSize={"40px"}>
+        Introducción
+      </Typography>
       <Box
         sx={{
           width: "100%",

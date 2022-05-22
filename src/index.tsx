@@ -10,6 +10,16 @@ import Ubicacion from "./pages/subpages/Ubicacion";
 import Historia from "./pages/subpages/Historia";
 import Flora from "./pages/subpages/Flora";
 import Fauna from "./pages/subpages/Fauna";
+import ProblematicaActual from "./pages/subpages/ProblematicaActual";
+import DivisionPolitica from "./pages/subpages/DivisionPolitica";
+import ResguardosIndigenas from "./pages/subpages/ResguardosIndigenas";
+import ResguardoRiosTomo from "./pages/subpages/reguardos/ResguardoRiosTomo";
+import ResguardoSanLuis from "./pages/subpages/reguardos/ResguardoSanLuis";
+import ResguardoEsmeralda from "./pages/subpages/reguardos/ResguardoEsmeralda";
+import ResguardoValdivia from "./pages/subpages/reguardos/ResguardoValdivia";
+import ResguardoPuntaBandera from "./pages/subpages/reguardos/ResguardoPuntaBandera";
+import ResguardoKawaneruba from "./pages/subpages/reguardos/ResguardoKawaneruba";
+import ResguardoRiosMuco from "./pages/subpages/reguardos/ResguardoRiosMuco";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -39,6 +49,46 @@ root.render(
         <Route
           path="/Conocimiento/fauna"
           element={<App Element={<Fauna />} />}
+        />
+        <Route
+          path="/Conocimiento/problematica-actual"
+          element={<App Element={<ProblematicaActual />} />}
+        />
+        <Route
+          path="/Conocimiento/resguardo-indigena"
+          element={<App Element={<ResguardosIndigenas />} />}
+        />
+        <Route
+          path="/Conocimiento/Division-politico-territorial"
+          element={<App Element={<DivisionPolitica />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/rios-tomo-y-beweri"
+          element={<App Element={<ResguardoRiosTomo />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/san-luis-del-tomo"
+          element={<App Element={<ResguardoSanLuis />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/la-esmeralda"
+          element={<App Element={<ResguardoEsmeralda />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/valdivia"
+          element={<App Element={<ResguardoValdivia />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/punta-bandera"
+          element={<App Element={<ResguardoPuntaBandera />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/Kawaneruba"
+          element={<App Element={<ResguardoKawaneruba />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/rios-muco-y-guarrojo"
+          element={<App Element={<ResguardoRiosMuco />} />}
         />
         <Route path="/Educando" element={<App Element={<Intro />} />} />
       </Routes>

@@ -518,6 +518,22 @@ export const App = ({
       window.scrollTo(0, 0);
 
       break;
+    case "/conocimiento/ubicacion":
+      window.scrollTo(0, 0);
+
+      break;
+    case "/conocimiento/historia":
+      window.scrollTo(0, 0);
+
+      break;
+    case "/conocimiento/flora":
+      window.scrollTo(0, 0);
+
+      break;
+    case "/conocimiento/fauna":
+      window.scrollTo(0, 0);
+
+      break;
     case "/Educando":
       document.getElementsByClassName("active")[0] &&
         document

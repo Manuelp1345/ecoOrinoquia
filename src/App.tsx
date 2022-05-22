@@ -190,7 +190,11 @@ export const App = ({
                   borderTop: "3px solid #0C453A",
                 }}
               >
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/rios-tomo-y-beweri`);
+                  }}
+                >
                   <ListItemText
                     primary="Resguado Ríos Tomo y Beweri"
                     sx={{
@@ -205,7 +209,11 @@ export const App = ({
                   borderLeft: "3px solid #0C453A",
                 }}
               >
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/san-luis-del-tomo`);
+                  }}
+                >
                   <ListItemText
                     primary="Resguardo San Luis del Tomo"
                     sx={{
@@ -221,7 +229,11 @@ export const App = ({
                   borderLeft: "3px solid #0C453A",
                 }}
               >
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/la-esmeralda`);
+                  }}
+                >
                   <ListItemText
                     primary="Resguardo La Esmeralda"
                     sx={{
@@ -237,7 +249,11 @@ export const App = ({
                   borderLeft: "3px solid #0C453A",
                 }}
               >
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/valdivia`);
+                  }}
+                >
                   <ListItemText
                     primary="Resguardo Valdivia"
                     sx={{
@@ -253,7 +269,11 @@ export const App = ({
                   borderLeft: "3px solid #0C453A",
                 }}
               >
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/punta-bandera`);
+                  }}
+                >
                   <ListItemText
                     primary="Resguardo Punta Bandera"
                     sx={{
@@ -269,7 +289,11 @@ export const App = ({
                   borderLeft: "3px solid #0C453A",
                 }}
               >
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/kawaneruba`);
+                  }}
+                >
                   <ListItemText
                     primary="Resguardo Kawaneruba"
                     sx={{
@@ -285,23 +309,11 @@ export const App = ({
                   borderLeft: "3px solid #0C453A",
                 }}
               >
-                <ListItemButton>
-                  <ListItemText
-                    primary="Resguardo Ríos Muco y Guarrojo"
-                    sx={{
-                      color: "white",
-                      pr: 3,
-                    }}
-                  />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{
-                  marginLeft: 1,
-                  borderLeft: "3px solid #0C453A",
-                }}
-              >
-                <ListItemButton>
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/rios-muco-y-guarrojo`);
+                  }}
+                >
                   <ListItemText
                     primary="Resguardo Ríos Muco y Guarrojo"
                     sx={{

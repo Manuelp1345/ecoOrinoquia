@@ -9,16 +9,12 @@ const OxigenoThree = () => {
 
   return (
     <Box
+      className="container"
       sx={{
-        height: "100vh",
         marginLeft: { sm: 26 },
         marginTop: { sm: 17 },
         paddingLeft: { sm: "78px" },
         p: 3,
-        backgroundImage: "url(img/rios.png)",
-        backgroundPosition: [[12, 12]],
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
       }}
     >
       <Toolbar />
@@ -66,6 +62,7 @@ const OxigenoThree = () => {
             textDecoration: "none",
             color: "#7DDFCC",
             flexDirection: "row-reverse",
+            zIndex: 1,
           }}
           onClick={() => navigate("/Educando/1")}
         >

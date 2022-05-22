@@ -9,16 +9,12 @@ const Educando = () => {
 
   return (
     <Box
+      className="container"
       sx={{
-        height: "100vh",
         marginLeft: { sm: 26 },
         marginTop: { sm: 17 },
         paddingLeft: { sm: "78px" },
         p: 3,
-        backgroundImage: "url(img/rios.png)",
-        backgroundPosition: [[12, 12]],
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
       }}
     >
       <Toolbar />
@@ -51,6 +47,7 @@ const Educando = () => {
             cursor: "pointer",
             textDecoration: "none",
             color: "#7DDFCC",
+            zIndex: 1,
           }}
           onClick={() => navigate("/Educando/1")}
         >
@@ -96,6 +93,7 @@ const Educando = () => {
             cursor: "pointer",
             textDecoration: "none",
             color: "#7DDFCC",
+            zIndex: 1,
           }}
           onClick={() => navigate("/Educando/3")}
         >
@@ -143,6 +141,7 @@ const Educando = () => {
             cursor: "pointer",
             textDecoration: "none",
             color: "#7DDFCC",
+            zIndex: 1,
           }}
           onClick={() => navigate("/Educando/5")}
         >
@@ -191,6 +190,7 @@ const Educando = () => {
             textDecoration: "none",
             color: "#7DDFCC",
             flexDirection: "row-reverse",
+            zIndex: 1,
           }}
           onClick={() =>
             navigate("/Conocimiento/reguardo/rios-muco-y-guarrojo")

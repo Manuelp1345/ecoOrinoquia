@@ -4,23 +4,23 @@ import Box from "@mui/material/Box";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-const OxigenoFive = () => {
+const OrinoquiaRecompensas = () => {
   const navigate = useNavigate();
 
   return (
     <Box
       className="container"
       sx={{
-        height: "100vh",
         marginLeft: { sm: 26 },
         marginTop: { sm: 17 },
         paddingLeft: { sm: "78px" },
         p: 3,
+        pb: 10,
       }}
     >
       <Toolbar />
       <Typography marginTop={{ xs: 10, sm: 0 }} fontSize={"40px"}>
-        ¿Cuál es el tiempo de vida de un árbol?
+        Recompensas
       </Typography>
       <Box
         sx={{
@@ -31,12 +31,20 @@ const OxigenoFive = () => {
         }}
       />
       <Typography marginBottom={2} color={"#7DDFCC"} paragraph>
-        El tiempo estimado del material plantular se puede catalogar según su
-        variedad, pero en los sistemas productivos de bosque y forestales la
-        mayoría de los individuos pueden está en su vida utilizable y productiva
-        después del año 4 se estabilizan sobre el año 8 y maduran a los 12 a 16
-        años, teniendo en cuenta que los materiales forestales pueden durar de
-        20 años en adelante sin límite de tiempo para algunas especies.
+        Las recompensas que recibirán los jugadores en las diferentes
+        modalidades se denomina Oxigeno (O2), y tiene un valor estable de un (1)
+        USDC, BUSD o USDT. El modo free to play no genera recompensas pero si
+        entra en el ranking de clasificación pudiendo a optar a los premios a
+        repartir entre los mejores jugadores.
+        <br />
+        <br />
+        El mínimo de ingreso y retiro es de 30 fichas Oxigeno. Los retiros
+        tendrán un fee o deducción del 5%, distribuidos de la siguiente manera:
+        <ul>
+          <li>3% para apoyar proyectos en la Orinoquia Colombiana.</li>
+          <li>2% para desarrollo del juego.</li>
+        </ul>
+        Éste 5% se liquidará cada 3 días.
       </Typography>
 
       <Box sx={{ display: "flex" }}>
@@ -56,14 +64,14 @@ const OxigenoFive = () => {
             flexDirection: "row-reverse",
             zIndex: 1,
           }}
-          onClick={() => navigate("/Educando/4")}
+          onClick={() => navigate("/play-to-earn/items")}
         >
           <Box>
             <Typography textAlign={"right"} variant="subtitle2">
-              Creando conciencia - Anterior
+              Play to Earn - Anterior
             </Typography>
             <Typography textAlign={"right"} variant="subtitle1">
-              ¿Cuánto cuesta plantar un árbol?
+              Items
             </Typography>
           </Box>
           <ArrowLeft sx={{ fontSize: "45px", color: "#37C7AB" }} />
@@ -83,13 +91,11 @@ const OxigenoFive = () => {
             color: "#7DDFCC",
             zIndex: 1,
           }}
-          onClick={() => navigate("/Educando/6")}
+          onClick={() => navigate("/play-to-earn/GameMode")}
         >
           <Box>
             <Typography variant="subtitle2">Próximo</Typography>
-            <Typography variant="subtitle1">
-              ¿Cuánto oxígeno necesita un humano para vivir?
-            </Typography>
+            <Typography variant="subtitle1">Modalidad de juego</Typography>
           </Box>
           <ArrowRight sx={{ fontSize: "45px", color: "#37C7AB" }} />
         </Box>
@@ -107,4 +113,4 @@ const OxigenoFive = () => {
   );
 };
 
-export default OxigenoFive;
+export default OrinoquiaRecompensas;

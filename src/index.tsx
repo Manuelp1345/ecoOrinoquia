@@ -27,6 +27,24 @@ import OxigenoThree from "./pages/educando/OxigenoThree";
 import OxigenoFour from "./pages/educando/OxigenoFour";
 import OxigenoFive from "./pages/educando/OxigenoFive";
 import OxigenoSix from "./pages/educando/OxigenoSix";
+import EcoOrinoquia from "./pages/EcoOrinoquia";
+import EcoOrinoquiaToken from "./pages/subpages/ecoOrinoquia/EcoOrinoquiaToken";
+import EcoOrinoquiaTokenomics from "./pages/subpages/ecoOrinoquia/EcoOrinoquiaTokenomics";
+import EcoOrinoquiaGobernanza from "./pages/subpages/ecoOrinoquia/EcoOrinoquiaGobernanza";
+import EcoOrinoquiaMapa from "./pages/subpages/ecoOrinoquia/EcoOrinoquiaMapa";
+import Orinoquia from "./pages/Orinoquia";
+import OrinoquiaItems from "./pages/orinoquia/OrinoquiaItems";
+import OrinoquiaRecompensas from "./pages/orinoquia/OrinoquiaRecompensas";
+import GameMode from "./pages/GameMode";
+import GameModeFarm from "./pages/gameMode/GameModeFarm";
+import GameModePvP from "./pages/gameMode/GameModePvP";
+import GameModeDominio from "./pages/gameMode/GameModeDominio";
+import OrinoquiaRoi from "./pages/orinoquia/OrinoquiaRoi";
+import OrinoquiaMercado from "./pages/orinoquia/OrinoquiaMercado";
+import OrinoquiaTienda from "./pages/orinoquia/OrinoquiaTienda";
+import OrinoquiaFinanzas from "./pages/orinoquia/OrinoquiaFinanzas";
+import Team from "./pages/Team";
+import Redes from "./pages/Redes";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -107,6 +125,72 @@ root.render(
         <Route path="/Educando/4" element={<App Element={<OxigenoFour />} />} />
         <Route path="/Educando/5" element={<App Element={<OxigenoFive />} />} />
         <Route path="/Educando/6" element={<App Element={<OxigenoSix />} />} />
+        <Route
+          path="/ecoorinoquia"
+          element={<App Element={<EcoOrinoquia />} />}
+        />
+        <Route
+          path="/ecoorinoquia/token"
+          element={<App Element={<EcoOrinoquiaToken />} />}
+        />
+        <Route
+          path="/ecoorinoquia/tokenomics"
+          element={<App Element={<EcoOrinoquiaTokenomics />} />}
+        />
+        <Route
+          path="/ecoorinoquia/gobernanza"
+          element={<App Element={<EcoOrinoquiaGobernanza />} />}
+        />
+        <Route
+          path="/ecoorinoquia/route-map"
+          element={<App Element={<EcoOrinoquiaMapa />} />}
+        />
+        <Route
+          path="/play-to-earn/orinoquia"
+          element={<App Element={<Orinoquia />} />}
+        />
+        <Route
+          path="/play-to-earn/items"
+          element={<App Element={<OrinoquiaItems />} />}
+        />
+        <Route
+          path="/play-to-earn/Recompensas"
+          element={<App Element={<OrinoquiaRecompensas />} />}
+        />
+        <Route
+          path="/play-to-earn/gamemode"
+          element={<App Element={<GameMode />} />}
+        />
+        <Route
+          path="/play-to-earn/gamemode/farm"
+          element={<App Element={<GameModeFarm />} />}
+        />
+        <Route
+          path="/play-to-earn/gamemode/PvP"
+          element={<App Element={<GameModePvP />} />}
+        />
+        <Route
+          path="/play-to-earn/gamemode/dominio-resguardo"
+          element={<App Element={<GameModeDominio />} />}
+        />
+        <Route
+          path="/play-to-earn/roi"
+          element={<App Element={<OrinoquiaRoi />} />}
+        />
+        <Route
+          path="/play-to-earn/mercado"
+          element={<App Element={<OrinoquiaMercado />} />}
+        />
+        <Route
+          path="/play-to-earn/tienda"
+          element={<App Element={<OrinoquiaTienda />} />}
+        />
+        <Route
+          path="/play-to-earn/sostenibilidad-finaciera"
+          element={<App Element={<OrinoquiaFinanzas />} />}
+        />
+        <Route path="/team" element={<App Element={<Team />} />} />
+        <Route path="/redes-sociales" element={<App Element={<Redes />} />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -13,7 +13,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import { ExpandMore, ArrowForwardIos } from "@mui/icons-material";
-import { Collapse } from "@mui/material";
+import { Collapse, ListItemIcon } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
 
@@ -91,6 +91,9 @@ export const App = ({
       </Typography>
 
       <ListItemButton onClick={() => navigate("/Introduccion")}>
+        <ListItemIcon>
+          <Box component={"img"} width={50} src="/img/Ocarro.svg"></Box>
+        </ListItemIcon>
         <ListItemText
           id="intro"
           primary={"Introducción"}
@@ -398,8 +401,27 @@ export const App = ({
         "Mapa Ruta",
       ].map((text, index) => (
         <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemText primary={text} sx={{ color: "white" }} />
+          <ListItemButton
+            onClick={() =>
+              (index === 0 && navigate(`/ecoorinoquia`)) ||
+              (index === 1 && navigate(`/ecoorinoquia/token`)) ||
+              (index === 2 && navigate(`/ecoorinoquia/tokenomics`)) ||
+              (index === 3 && navigate(`/ecoorinoquia/gobernanza`)) ||
+              (index === 4 && navigate(`/ecoorinoquia/route-map`))
+            }
+          >
+            <ListItemText
+              id={
+                (index === 0 && "ecoorinoquia") ||
+                (index === 1 && "token") ||
+                (index === 2 && "tokenomics") ||
+                (index === 3 && "gobernanza") ||
+                (index === 4 && "route-map") ||
+                ""
+              }
+              primary={text}
+              sx={{ color: "white" }}
+            />
           </ListItemButton>
         </ListItem>
       ))}
@@ -427,21 +449,20 @@ export const App = ({
         "Mercado",
         "Tienda",
         "Sostenibilidad financiera",
-      ].map((text) =>
+      ].map((text, index) =>
         text === "Modalidad de juego" ? (
           <>
-            {" "}
             <ListItem key={text} disablePadding>
               <ListItemButton
                 onClick={() => {
                   setOpenGameMode((prevOpen) => !prevOpen);
                   openConocimiento && setOpenConocimiento(false);
                   openDivision && setOpenDivision(false);
-                  navigate("/Educando");
+                  navigate("/play-to-earn/gamemode");
                 }}
               >
                 <ListItemText
-                  id="gameMode"
+                  id="gamemode"
                   primary={text}
                   sx={{ color: "white" }}
                 />
@@ -462,9 +483,17 @@ export const App = ({
                       borderLeft: "3px solid #0C453A",
                       borderTop: index === 0 ? "3px solid #0C453A" : "none",
                     }}
+                    onClick={() =>
+                      (index === 0 &&
+                        navigate("/play-to-earn/gamemode/farm")) ||
+                      (index === 1 && navigate("/play-to-earn/gamemode/PvP")) ||
+                      (index === 2 &&
+                        navigate("/play-to-earn/gamemode/dominio-resguardo"))
+                    }
                   >
                     <ListItemButton>
                       <ListItemText
+                        id="gamemode"
                         primary={text}
                         sx={{
                           color: "white",
@@ -479,8 +508,32 @@ export const App = ({
           </>
         ) : (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} sx={{ color: "white" }} />
+            <ListItemButton
+              onClick={() =>
+                (index === 0 && navigate("/play-to-earn/orinoquia")) ||
+                (index === 1 && navigate("/play-to-earn/items")) ||
+                (index === 2 && navigate("/play-to-earn/Recompensas")) ||
+                (index === 4 && navigate("/play-to-earn/roi")) ||
+                (index === 5 && navigate("/play-to-earn/mercado")) ||
+                (index === 6 && navigate("/play-to-earn/tienda")) ||
+                (index === 7 &&
+                  navigate("/play-to-earn/sostenibilidad-finaciera"))
+              }
+            >
+              <ListItemText
+                id={
+                  (index === 0 && "orinoquia") ||
+                  (index === 1 && "items") ||
+                  (index === 2 && "Recompensas") ||
+                  (index === 4 && "roi") ||
+                  (index === 5 && "mercado") ||
+                  (index === 6 && "tienda") ||
+                  (index === 7 && "sostenibilidad-finaciera") ||
+                  ""
+                }
+                primary={text}
+                sx={{ color: "white" }}
+              />
             </ListItemButton>
           </ListItem>
         )
@@ -501,13 +554,17 @@ export const App = ({
       </Typography>
 
       <ListItem key={"Team"} disablePadding>
-        <ListItemButton>
-          <ListItemText primary="Team" sx={{ color: "white" }} />
+        <ListItemButton onClick={() => navigate("/team")}>
+          <ListItemText id="team" primary="Team" sx={{ color: "white" }} />
         </ListItemButton>
       </ListItem>
       <ListItem key={"Redes sociales"} sx={{ marginBottom: 5 }} disablePadding>
-        <ListItemButton>
-          <ListItemText primary="Redes sociales" sx={{ color: "white" }} />
+        <ListItemButton onClick={() => navigate("/redes-sociales")}>
+          <ListItemText
+            id="redes-sociales"
+            primary="Redes sociales"
+            sx={{ color: "white" }}
+          />
         </ListItemButton>
       </ListItem>
     </List>
@@ -554,6 +611,113 @@ export const App = ({
           .getElementsByClassName("active")[0]
           ?.classList.remove("active");
       document.querySelector("#Educando")?.classList.add("active");
+      break;
+    case "/ecoorinoquia":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#ecoorinoquia")?.classList.add("active");
+      break;
+    case "/ecoorinoquia/token":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#token")?.classList.add("active");
+      break;
+    case "/ecoorinoquia/tokenomics":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#tokenomics")?.classList.add("active");
+      break;
+    case "/ecoorinoquia/gobernanza":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#gobernanza")?.classList.add("active");
+      break;
+    case "/ecoorinoquia/route-map":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#route-map")?.classList.add("active");
+      break;
+    case "/play-to-earn/orinoquia":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#orinoquia")?.classList.add("active");
+      break;
+    case "/play-to-earn/items":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#items")?.classList.add("active");
+      break;
+    case "/play-to-earn/Recompensas":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#Recompensas")?.classList.add("active");
+      break;
+    case "/play-to-earn/gamemode":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#gamemode")?.classList.add("active");
+      break;
+    case "/play-to-earn/roi":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#roi")?.classList.add("active");
+      break;
+    case "/play-to-earn/mercado":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#mercado")?.classList.add("active");
+      break;
+    case "/play-to-earn/tienda":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#tienda")?.classList.add("active");
+      break;
+    case "/play-to-earn/sostenibilidad-finaciera":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document
+        .querySelector("#sostenibilidad-finaciera")
+        ?.classList.add("active");
+      break;
+    case "/team":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#team")?.classList.add("active");
+      break;
+    case "/redes-sociales":
+      document.getElementsByClassName("active")[0] &&
+        document
+          .getElementsByClassName("active")[0]
+          ?.classList.remove("active");
+      document.querySelector("#redes-sociales")?.classList.add("active");
       break;
 
     default:

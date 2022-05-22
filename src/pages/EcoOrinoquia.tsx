@@ -3,24 +3,25 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
-const OxigenoFive = () => {
+const EcoOrinoquia = () => {
   const navigate = useNavigate();
 
   return (
     <Box
       className="container"
       sx={{
-        height: "100vh",
         marginLeft: { sm: 26 },
         marginTop: { sm: 17 },
         paddingLeft: { sm: "78px" },
         p: 3,
+        pb: 10,
       }}
     >
       <Toolbar />
       <Typography marginTop={{ xs: 10, sm: 0 }} fontSize={"40px"}>
-        ¿Cuál es el tiempo de vida de un árbol?
+        Que es EcoOrinoquia
       </Typography>
       <Box
         sx={{
@@ -31,12 +32,29 @@ const OxigenoFive = () => {
         }}
       />
       <Typography marginBottom={2} color={"#7DDFCC"} paragraph>
-        El tiempo estimado del material plantular se puede catalogar según su
-        variedad, pero en los sistemas productivos de bosque y forestales la
-        mayoría de los individuos pueden está en su vida utilizable y productiva
-        después del año 4 se estabilizan sobre el año 8 y maduran a los 12 a 16
-        años, teniendo en cuenta que los materiales forestales pueden durar de
-        20 años en adelante sin límite de tiempo para algunas especies.
+        EcoOrinoquia es un proyecto crypto basado en la geografía y cultura
+        indígena de la Orinoquia, con el objetivo de generar conciencia en las
+        nuevas generaciones y en la colectividad sobre la importancia de la
+        conservación de ciertos ecosistemas y lugares del planeta que son
+        fundamentales para el equilibrio medioambiental y la preservación de la
+        vida en el mismo, además de captar y administrar recursos de forma
+        transparente, pública y auditable para ayudar a los resguardos indígenas
+        de la zona en mejorar sus condiciones de vida y ambientales, restaurando
+        y preservando los lugares donde habitan. Para mayor información
+        detallada ir a{" "}
+        <Button
+          sx={{
+            cursor: "pointer!important",
+            color: "#7DDFCC",
+            fontSize: "0.9rem",
+            fontWeight: 400,
+            ml: -1,
+            textTransform: "none",
+          }}
+          onClick={() => window.open("https://ecoorinoquia.org", "_blank")}
+        >
+          https://ecoorinoquia.org
+        </Button>
       </Typography>
 
       <Box sx={{ display: "flex" }}>
@@ -56,14 +74,14 @@ const OxigenoFive = () => {
             flexDirection: "row-reverse",
             zIndex: 1,
           }}
-          onClick={() => navigate("/Educando/4")}
+          onClick={() => navigate("/Educando/6")}
         >
           <Box>
             <Typography textAlign={"right"} variant="subtitle2">
-              Creando conciencia - Anterior
+              EcoOrinoquia - Anterior
             </Typography>
             <Typography textAlign={"right"} variant="subtitle1">
-              ¿Cuánto cuesta plantar un árbol?
+              ¿Cuánto oxígeno necesita un humano para vivir?
             </Typography>
           </Box>
           <ArrowLeft sx={{ fontSize: "45px", color: "#37C7AB" }} />
@@ -83,13 +101,11 @@ const OxigenoFive = () => {
             color: "#7DDFCC",
             zIndex: 1,
           }}
-          onClick={() => navigate("/Educando/6")}
+          onClick={() => navigate("/EcoOrinoquia/token")}
         >
           <Box>
             <Typography variant="subtitle2">Próximo</Typography>
-            <Typography variant="subtitle1">
-              ¿Cuánto oxígeno necesita un humano para vivir?
-            </Typography>
+            <Typography variant="subtitle1">Eco Orinoquia Token</Typography>
           </Box>
           <ArrowRight sx={{ fontSize: "45px", color: "#37C7AB" }} />
         </Box>
@@ -107,4 +123,4 @@ const OxigenoFive = () => {
   );
 };
 
-export default OxigenoFive;
+export default EcoOrinoquia;

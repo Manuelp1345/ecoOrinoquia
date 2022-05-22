@@ -4,23 +4,23 @@ import Box from "@mui/material/Box";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-const OxigenoFive = () => {
+const OrinoquiaTienda = () => {
   const navigate = useNavigate();
 
   return (
     <Box
       className="container"
       sx={{
-        height: "100vh",
         marginLeft: { sm: 26 },
         marginTop: { sm: 17 },
         paddingLeft: { sm: "78px" },
         p: 3,
+        pb: 10,
       }}
     >
       <Toolbar />
       <Typography marginTop={{ xs: 10, sm: 0 }} fontSize={"40px"}>
-        ¿Cuál es el tiempo de vida de un árbol?
+        Tienda
       </Typography>
       <Box
         sx={{
@@ -31,12 +31,22 @@ const OxigenoFive = () => {
         }}
       />
       <Typography marginBottom={2} color={"#7DDFCC"} paragraph>
-        El tiempo estimado del material plantular se puede catalogar según su
-        variedad, pero en los sistemas productivos de bosque y forestales la
-        mayoría de los individuos pueden está en su vida utilizable y productiva
-        después del año 4 se estabilizan sobre el año 8 y maduran a los 12 a 16
-        años, teniendo en cuenta que los materiales forestales pueden durar de
-        20 años en adelante sin límite de tiempo para algunas especies.
+        Permite la exhibición y venta de productos y servicios que producen y
+        prestan las comunidades indígenas y que pueden ser cancelados con fichas
+        del Juego (Oxigeno O2). de compra.
+        <br />
+        <br />
+        Productos:
+        <br />
+        <br />
+        Artesanías:
+        <br />
+        <br />
+        Servicios: Etnoturismo y entradas al Etnomuseo.
+        <br />
+        <br />
+        El 5% de lo facturado se usará para dar liquidez a las recompensas del
+        juego.
       </Typography>
 
       <Box sx={{ display: "flex" }}>
@@ -56,14 +66,14 @@ const OxigenoFive = () => {
             flexDirection: "row-reverse",
             zIndex: 1,
           }}
-          onClick={() => navigate("/Educando/4")}
+          onClick={() => navigate("/play-to-earn/mercado")}
         >
           <Box>
             <Typography textAlign={"right"} variant="subtitle2">
-              Creando conciencia - Anterior
+              Play to Earn - Anterior
             </Typography>
             <Typography textAlign={"right"} variant="subtitle1">
-              ¿Cuánto cuesta plantar un árbol?
+              Mercado
             </Typography>
           </Box>
           <ArrowLeft sx={{ fontSize: "45px", color: "#37C7AB" }} />
@@ -83,12 +93,12 @@ const OxigenoFive = () => {
             color: "#7DDFCC",
             zIndex: 1,
           }}
-          onClick={() => navigate("/Educando/6")}
+          onClick={() => navigate("/play-to-earn/sostenibilidad-finaciera")}
         >
           <Box>
             <Typography variant="subtitle2">Próximo</Typography>
             <Typography variant="subtitle1">
-              ¿Cuánto oxígeno necesita un humano para vivir?
+              Sostenibilidad financiera
             </Typography>
           </Box>
           <ArrowRight sx={{ fontSize: "45px", color: "#37C7AB" }} />
@@ -107,4 +117,4 @@ const OxigenoFive = () => {
   );
 };
 
-export default OxigenoFive;
+export default OrinoquiaTienda;

@@ -20,6 +20,13 @@ import ResguardoValdivia from "./pages/subpages/reguardos/ResguardoValdivia";
 import ResguardoPuntaBandera from "./pages/subpages/reguardos/ResguardoPuntaBandera";
 import ResguardoKawaneruba from "./pages/subpages/reguardos/ResguardoKawaneruba";
 import ResguardoRiosMuco from "./pages/subpages/reguardos/ResguardoRiosMuco";
+import Educando from "./pages/Educando";
+import OxigenoOne from "./pages/educando/OxigenoOne";
+import OxigenoTwo from "./pages/educando/OxigenoTwo";
+import OxigenoThree from "./pages/educando/OxigenoThree";
+import OxigenoFour from "./pages/educando/OxigenoFour";
+import OxigenoFive from "./pages/educando/OxigenoFive";
+import OxigenoSix from "./pages/educando/OxigenoSix";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -90,7 +97,16 @@ root.render(
           path="/Conocimiento/reguardo/rios-muco-y-guarrojo"
           element={<App Element={<ResguardoRiosMuco />} />}
         />
-        <Route path="/Educando" element={<App Element={<Intro />} />} />
+        <Route path="/Educando" element={<App Element={<Educando />} />} />
+        <Route path="/Educando/1" element={<App Element={<OxigenoOne />} />} />
+        <Route path="/Educando/2" element={<App Element={<OxigenoTwo />} />} />
+        <Route
+          path="/Educando/3"
+          element={<App Element={<OxigenoThree />} />}
+        />
+        <Route path="/Educando/4" element={<App Element={<OxigenoFour />} />} />
+        <Route path="/Educando/5" element={<App Element={<OxigenoFive />} />} />
+        <Route path="/Educando/6" element={<App Element={<OxigenoSix />} />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

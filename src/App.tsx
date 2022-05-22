@@ -359,7 +359,9 @@ export const App = ({
                 borderTop: index === 0 ? "3px solid #0C453A" : "none",
               }}
             >
-              <ListItemButton>
+              <ListItemButton
+                onClick={() => navigate(`/Educando/${index + 1}`)}
+              >
                 <ListItemText
                   primary={text}
                   sx={{

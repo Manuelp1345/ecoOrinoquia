@@ -37,7 +37,7 @@ const listEducando = [
 
 const listGameMode = ["Farm", "PvP", "Dominio Resguardo"];
 export const App = ({
-  window,
+  window: windowMovil,
   Element,
 }: {
   window?: () => Window;
@@ -122,6 +122,15 @@ export const App = ({
           {listConocimientos.map((text, index) => (
             <ListItem
               key={text}
+              onClick={() =>
+                (index === 0 && navigate(`/conocimiento/ubicacion`)) ||
+                (index === 1 && navigate(`/conocimiento/historia`)) ||
+                (index === 2 && navigate(`/conocimiento/flora`)) ||
+                (index === 3 && navigate(`/conocimiento/fauna`)) ||
+                (index === 4 &&
+                  navigate(`/conocimiento/problematica-actual`)) ||
+                (index === 5 && navigate(`/conocimiento/resguardo-indigena`))
+              }
               sx={{
                 marginLeft: 1.5,
                 borderLeft: "3px solid #0C453A",
@@ -149,7 +158,10 @@ export const App = ({
             }}
           >
             <ListItemButton
-              onClick={() => setOpenDivision((prevOpen) => !prevOpen)}
+              onClick={() => {
+                setOpenDivision((prevOpen) => !prevOpen);
+                navigate(`/conocimiento/Division-politico-territorial`);
+              }}
             >
               <ListItemText
                 primary="División politico territorial de los resguardos firmantes del convenio"
@@ -488,7 +500,7 @@ export const App = ({
   );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined;
+    windowMovil !== undefined ? () => windowMovil().document.body : undefined;
   switch (location.pathname) {
     case "/Introduccion":
       document.getElementsByClassName("active") &&
@@ -503,6 +515,8 @@ export const App = ({
           .getElementsByClassName("active")[0]
           ?.classList.remove("active");
       document.querySelector("#conocimiento")?.classList.add("active");
+      window.scrollTo(0, 0);
+
       break;
     case "/Educando":
       document.getElementsByClassName("active")[0] &&

@@ -1,11 +1,26 @@
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { ArrowRightAlt } from "@mui/icons-material";
+import { ArrowRight } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const Intro = () => {
+  const navigate = useNavigate();
   return (
-    <>
+    <Box
+      sx={{
+        marginTop: { sm: 17 },
+        marginLeft: { sm: 26 },
+        paddingLeft: { sm: "78px" },
+        p: 3,
+        height: "100%",
+        backgroundImage: "url(img/rios.png)",
+        backgroundPosition: [[12, 12]],
+
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Toolbar />
       <Typography marginTop={{ xs: 10, sm: 0 }} fontSize={"40px"}>
         Introducción
@@ -75,6 +90,7 @@ const Intro = () => {
           textDecoration: "none",
           color: "#7DDFCC",
         }}
+        onClick={() => navigate("/conocimiento")}
       >
         <Box>
           <Typography variant="subtitle2">
@@ -82,7 +98,7 @@ const Intro = () => {
           </Typography>
           <Typography variant="subtitle1">Conociendo</Typography>
         </Box>
-        <ArrowRightAlt sx={{ fontSize: "45px", color: "#37C7AB" }} />
+        <ArrowRight sx={{ fontSize: "45px", color: "#37C7AB" }} />
       </Box>
 
       <Box
@@ -93,7 +109,7 @@ const Intro = () => {
           marginBottom: "75px",
         }}
       />
-    </>
+    </Box>
   );
 };
 

@@ -20,3 +20,15 @@
 .btnContent:hover {
   background-color: rgb(12, 71, 59) !important;
 }
+.container::before {
+  content: "";
+  width: 100%;
+  top: 5rem;
+  position: absolute;
+  left: 0;
+  height: calc(100% + 5rem);
+  background-image: url(/public/img/rios.png) !important;
+  background-position: center;
+  background-size: 100% 85%;
+  background-repeat: no-repeat;
+}

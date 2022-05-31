@@ -45,6 +45,7 @@ import OrinoquiaTienda from "./pages/orinoquia/OrinoquiaTienda";
 import OrinoquiaFinanzas from "./pages/orinoquia/OrinoquiaFinanzas";
 import Team from "./pages/Team";
 import Redes from "./pages/Redes";
+import ResguardoNuevaEsperanza from "./pages/subpages/reguardos/ResguardoNuevaEsperanza";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -114,6 +115,10 @@ root.render(
         <Route
           path="/Conocimiento/reguardo/rios-muco-y-guarrojo"
           element={<App Element={<ResguardoRiosMuco />} />}
+        />
+        <Route
+          path="/Conocimiento/reguardo/nueva-esperanza-del-tomo"
+          element={<App Element={<ResguardoNuevaEsperanza />} />}
         />
         <Route path="/Educando" element={<App Element={<Educando />} />} />
         <Route path="/Educando/1" element={<App Element={<OxigenoOne />} />} />

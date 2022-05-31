@@ -92,7 +92,7 @@ export const App = ({
 
       <ListItemButton onClick={() => navigate("/Introduccion")}>
         <ListItemIcon>
-          <Box component={"img"} width={50} src="/img/Ocarro.svg"></Box>
+          <Box component={"img"} width={35} src="/img/Group 18.svg"></Box>
         </ListItemIcon>
         <ListItemText
           id="intro"
@@ -108,6 +108,9 @@ export const App = ({
             navigate("/conocimiento");
           }}
         >
+          <ListItemIcon>
+            <Box component={"img"} width={35} src="/img/Group 19.svg"></Box>
+          </ListItemIcon>
           <ListItemText
             id="conocimiento"
             primary="Conociendo"
@@ -326,6 +329,26 @@ export const App = ({
                   />
                 </ListItemButton>
               </ListItem>
+              <ListItem
+                sx={{
+                  marginLeft: 1,
+                  borderLeft: "3px solid #0C453A",
+                }}
+              >
+                <ListItemButton
+                  onClick={() => {
+                    navigate(`/Conocimiento/reguardo/nueva-esperanza-del-tomo`);
+                  }}
+                >
+                  <ListItemText
+                    primary="Resguardo Nueva Esperanza del Tomo"
+                    sx={{
+                      color: "white",
+                      pr: 3,
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
             </List>
           </Collapse>
         </List>
@@ -339,6 +362,9 @@ export const App = ({
             navigate("/Educando");
           }}
         >
+          <ListItemIcon>
+            <Box component={"img"} width={35} src="/img/Group 20.svg"></Box>
+          </ListItemIcon>
           <ListItemText
             id="Educando"
             primary="Educando"
@@ -410,6 +436,13 @@ export const App = ({
               (index === 4 && navigate(`/ecoorinoquia/route-map`))
             }
           >
+            <ListItemIcon>
+              <Box
+                component={"img"}
+                width={35}
+                src={`/img/Group 2${index + 1}.svg`}
+              ></Box>
+            </ListItemIcon>
             <ListItemText
               id={
                 (index === 0 && "ecoorinoquia") ||
@@ -461,6 +494,13 @@ export const App = ({
                   navigate("/play-to-earn/gamemode");
                 }}
               >
+                <ListItemIcon>
+                  <Box
+                    component={"img"}
+                    width={35}
+                    src="/img/Group 29.svg"
+                  ></Box>
+                </ListItemIcon>
                 <ListItemText
                   id="gamemode"
                   primary={text}
@@ -520,6 +560,14 @@ export const App = ({
                   navigate("/play-to-earn/sostenibilidad-finaciera"))
               }
             >
+              <ListItemIcon>
+                <Box
+                  component={"img"}
+                  width={35}
+                  src={`/img/Group ${26 + index}.svg`}
+                ></Box>
+              </ListItemIcon>
+
               <ListItemText
                 id={
                   (index === 0 && "orinoquia") ||

@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-const ResguardoRiosMuco = () => {
+const ResguardoNuevaEsperanza = () => {
   const navigate = useNavigate();
 
   return (
@@ -19,7 +19,7 @@ const ResguardoRiosMuco = () => {
     >
       <Toolbar />
       <Typography marginTop={{ xs: 10, sm: 0 }} fontSize={"40px"}>
-        Resguardo Ríos Muco y Guarrojo
+        Resguardo Nueva Esperanza del Tomo.
         <br />
         <br />
       </Typography>
@@ -29,7 +29,7 @@ const ResguardoRiosMuco = () => {
           zIndex: 55,
         }}
         component={"img"}
-        src={"/img/RESGUARDO KAWANERUBA.png"}
+        src={"/img/RESGUARDO_RÍOS_TOMO_Y_BEWERI.png"}
       />
       <Typography textAlign={"center"}>
         Fuente: IGAC (Instituto geográfico Agustín Codazzi)
@@ -49,7 +49,7 @@ const ResguardoRiosMuco = () => {
             zIndex: 55,
           }}
           component={"img"}
-          src={"/img/LOGO KAWANERUBA.png"}
+          src={"/img/enuevaesperanzadeltomo.png"}
         />
         <Typography textAlign={"center"}>Escudo</Typography>
         <Box
@@ -97,7 +97,7 @@ const ResguardoRiosMuco = () => {
             }}
           >
             <Box sx={{ width: "50%" }}>Resguardo:</Box>
-            <Box sx={{ width: "50%" }}>Ríos Muco y Guarrojo</Box>
+            <Box sx={{ width: "50%" }}> Nueva Esperanza del Tomo</Box>
           </Box>
           <Box
             sx={{
@@ -114,7 +114,9 @@ const ResguardoRiosMuco = () => {
           >
             <Box sx={{ width: "50%" }}>Ubicación:</Box>
             <Box sx={{ width: "50%" }}>
-              Margen izquierdo del rio Guarrojo, a 250 km de Puerto Gaitán
+              Se encuentra entre la margen izquierda del río Tomo y el caño
+              Marrano en la vereda Nazaret inspección de policía de Guacacias,
+              municipio de Santa Rosalia.
             </Box>
           </Box>
           <Box
@@ -131,7 +133,7 @@ const ResguardoRiosMuco = () => {
             }}
           >
             <Box sx={{ width: "50%" }}>Extensión:</Box>
-            <Box sx={{ width: "50%" }}>84.000 Ha.</Box>
+            <Box sx={{ width: "50%" }}> 9.986 Ha.</Box>
           </Box>
           <Box
             sx={{
@@ -147,7 +149,7 @@ const ResguardoRiosMuco = () => {
             }}
           >
             <Box sx={{ width: "50%" }}>Temperatura:</Box>
-            <Box sx={{ width: "50%" }}>Entre 24°C y 29°C.</Box>
+            <Box sx={{ width: "50%" }}> Entre 24ºC y 31ºC </Box>
           </Box>
           <Box
             sx={{
@@ -163,7 +165,7 @@ const ResguardoRiosMuco = () => {
             }}
           >
             <Box sx={{ width: "50%" }}>Etnia:</Box>
-            <Box sx={{ width: "50%" }}>Sikuani.</Box>
+            <Box sx={{ width: "50%" }}>Sikuani </Box>
           </Box>
           <Box
             sx={{
@@ -179,7 +181,7 @@ const ResguardoRiosMuco = () => {
             }}
           >
             <Box sx={{ width: "50%" }}>Lengua:</Box>
-            <Box sx={{ width: "50%" }}>Sikuani. </Box>
+            <Box sx={{ width: "50%" }}>Sikuani </Box>
           </Box>
           <Box
             sx={{
@@ -195,7 +197,7 @@ const ResguardoRiosMuco = () => {
             }}
           >
             <Box sx={{ width: "50%" }}>Población:</Box>
-            <Box sx={{ width: "50%" }}>99 pobladores y 17 familias.</Box>
+            <Box sx={{ width: "50%" }}> ** pobladores.</Box>
           </Box>
           <Box
             sx={{
@@ -211,7 +213,9 @@ const ResguardoRiosMuco = () => {
             }}
           >
             <Box sx={{ width: "50%" }}>Modo de vida:</Box>
-            <Box sx={{ width: "50%" }}>Sedentario inicialmente nomadismo.</Box>
+            <Box sx={{ width: "50%" }}>
+              Sedentarismo inicialmente nomadismo.
+            </Box>
           </Box>
           <Box
             sx={{
@@ -228,8 +232,8 @@ const ResguardoRiosMuco = () => {
           >
             <Box sx={{ width: "50%" }}>Alimentación:</Box>
             <Box sx={{ width: "50%" }}>
-              Plátano, caña, distintas variedades de yuca, maíz, ají, piña,
-              kasave, mañoco, peces, micos, dantas, chigüiros, lapas y venados.
+              Casabe, mañoco, seje, cucurito, el moriche, maíz plátano, caña,
+              piña, batata, ñame y frutas silvestres.
             </Box>
           </Box>
           <Box
@@ -266,7 +270,7 @@ const ResguardoRiosMuco = () => {
           </Box>
         </Box>
         <Typography sx={{ fontWeight: "bold", mt: 2 }}>
-          Fuente: Plan de Vida resguardo Ríos Muco y Guarrojo.
+          Fuente: Plan de Vida resguardo Ríos Tomo y Beweri.
         </Typography>
       </Box>
       <Box
@@ -295,14 +299,16 @@ const ResguardoRiosMuco = () => {
             flexDirection: "row-reverse",
             zIndex: 1,
           }}
-          onClick={() => navigate("/conocimiento/reguardo/Kawaneruba")}
+          onClick={() =>
+            navigate("/Conocimiento/reguardo/rios-muco-y-guarrojo")
+          }
         >
           <Box>
             <Typography textAlign={"right"} variant="subtitle2">
               Creando conciencia - Anterior
             </Typography>
             <Typography textAlign={"right"} variant="subtitle1">
-              Resguardo Kawaneruba
+              Resguardo Ríos Muco y Guarrojo
             </Typography>
           </Box>
           <ArrowLeft sx={{ fontSize: "45px", color: "#37C7AB" }} />
@@ -322,17 +328,11 @@ const ResguardoRiosMuco = () => {
             color: "#7DDFCC",
             zIndex: 1,
           }}
-          onClick={() =>
-            navigate("/Conocimiento/reguardo/nueva-esperanza-del-tomo")
-          }
+          onClick={() => navigate("/Educando")}
         >
           <Box>
-            <Typography variant="subtitle2">
-              Próximo - Creando Conciencia
-            </Typography>
-            <Typography variant="subtitle1">
-              Resguardo Nueva Esperanza del Tomo.
-            </Typography>
+            <Typography variant="subtitle2">Próximo</Typography>
+            <Typography variant="subtitle1">Educando</Typography>
           </Box>
           <ArrowRight sx={{ fontSize: "45px", color: "#37C7AB" }} />
         </Box>
@@ -350,4 +350,4 @@ const ResguardoRiosMuco = () => {
   );
 };
 
-export default ResguardoRiosMuco;
+export default ResguardoNuevaEsperanza;

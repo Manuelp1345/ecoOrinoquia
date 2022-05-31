@@ -75,9 +75,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}>Item</Box>
-            <Box sx={{ width: "33%" }}>Cantidad</Box>
-            <Box sx={{ width: "33%" }}>Precio</Box>
+            <Box sx={{ width: "25%" }}>Item</Box>
+            <Box sx={{ width: "25%" }}>Cantidad</Box>
+            <Box sx={{ width: "25%" }}>Precio</Box>
+            <Box sx={{ width: "25%" }}>Producción</Box>
           </Box>
           <Box
             sx={{
@@ -92,9 +93,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}>Árbol NFT</Box>
-            <Box sx={{ width: "33%" }}>1</Box>
-            <Box sx={{ width: "33%" }}>30</Box>
+            <Box sx={{ width: "25%" }}>Árbol NFT</Box>
+            <Box sx={{ width: "25%" }}>1</Box>
+            <Box sx={{ width: "25%" }}>30</Box>
+            <Box sx={{ width: "25%" }}>70</Box>
           </Box>
           <Box
             sx={{
@@ -109,9 +111,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}>Agua</Box>
-            <Box sx={{ width: "33%" }}>1</Box>
-            <Box sx={{ width: "33%" }}>10</Box>
+            <Box sx={{ width: "25%" }}>Agua</Box>
+            <Box sx={{ width: "25%" }}>1</Box>
+            <Box sx={{ width: "25%" }}>10</Box>
+            <Box sx={{ width: "25%" }}>-</Box>
           </Box>
           <Box
             sx={{
@@ -126,9 +129,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}>Nutrientes</Box>
-            <Box sx={{ width: "33%" }}>1</Box>
-            <Box sx={{ width: "33%" }}>10</Box>
+            <Box sx={{ width: "25%" }}>Nutrientes</Box>
+            <Box sx={{ width: "25%" }}>1</Box>
+            <Box sx={{ width: "25%" }}>10</Box>
+            <Box sx={{ width: "25%" }}>-</Box>
           </Box>
           <Box
             sx={{
@@ -143,9 +147,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}>Arcos y flechas</Box>
-            <Box sx={{ width: "33%" }}>1</Box>
-            <Box sx={{ width: "33%" }}>5</Box>
+            <Box sx={{ width: "25%" }}>Arcos y flechas</Box>
+            <Box sx={{ width: "25%" }}>1</Box>
+            <Box sx={{ width: "25%" }}>5</Box>
+            <Box sx={{ width: "25%" }}>-</Box>
           </Box>
           <Box
             sx={{
@@ -160,9 +165,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}></Box>
-            <Box sx={{ width: "33%" }}>Total</Box>
-            <Box sx={{ width: "33%" }}>55 O2</Box>
+            <Box sx={{ width: "25%" }}></Box>
+            <Box sx={{ width: "25%" }}>Total</Box>
+            <Box sx={{ width: "25%" }}>55 O2</Box>
+            <Box sx={{ width: "25%" }}>70 O2</Box>
           </Box>
           <Typography
             marginBottom={2}
@@ -197,9 +203,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}>Item</Box>
-            <Box sx={{ width: "33%" }}>Cantidad</Box>
-            <Box sx={{ width: "33%" }}>Precio</Box>
+            <Box sx={{ width: "25%" }}>Item</Box>
+            <Box sx={{ width: "25%" }}>Cantidad</Box>
+            <Box sx={{ width: "25%" }}>Precio</Box>
+            <Box sx={{ width: "25%" }}>Producción</Box>
           </Box>
           <Box
             sx={{
@@ -214,9 +221,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}>Indígena NFT</Box>
-            <Box sx={{ width: "33%" }}>1</Box>
-            <Box sx={{ width: "33%" }}>100</Box>
+            <Box sx={{ width: "25%" }}>Indígena NFT</Box>
+            <Box sx={{ width: "25%" }}>1</Box>
+            <Box sx={{ width: "25%" }}>100</Box>
+            <Box sx={{ width: "25%" }}>120</Box>
           </Box>
           <Box
             sx={{
@@ -231,9 +239,10 @@ const OrinoquiaRoi = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ width: "33%" }}></Box>
-            <Box sx={{ width: "33%" }}>Total</Box>
-            <Box sx={{ width: "33%" }}>100 O2</Box>
+            <Box sx={{ width: "25%" }}></Box>
+            <Box sx={{ width: "25%" }}>Total</Box>
+            <Box sx={{ width: "25%" }}>100 O2</Box>
+            <Box sx={{ width: "25%" }}>120 O2</Box>
           </Box>
           <Typography
             marginBottom={2}

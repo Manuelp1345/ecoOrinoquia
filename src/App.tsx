@@ -603,11 +603,25 @@ export const App = ({
 
       <ListItem key={"Team"} disablePadding>
         <ListItemButton onClick={() => navigate("/team")}>
+          <ListItemIcon>
+            <Box
+              component={"img"}
+              width={35}
+              src="/img/Group 34.svg"
+            ></Box>
+          </ListItemIcon>
           <ListItemText id="team" primary="Team" sx={{ color: "white" }} />
         </ListItemButton>
       </ListItem>
       <ListItem key={"Redes sociales"} sx={{ marginBottom: 5 }} disablePadding>
         <ListItemButton onClick={() => navigate("/redes-sociales")}>
+          <ListItemIcon>
+            <Box
+              component={"img"}
+              width={35}
+              src="/img/Group 35.svg"
+            ></Box>
+          </ListItemIcon>
           <ListItemText
             id="redes-sociales"
             primary="Redes sociales"

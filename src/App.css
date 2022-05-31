@@ -10,6 +10,10 @@
   background-color: #0c453a;
   border-radius: 1px;
 }
+body {
+  background: linear-gradient(97.52deg, #002F46 12.98%, #106756 71.70%);
+  height: 100vh;
+}
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
 .css-1l8j5k8 {
   border-right: none !important;

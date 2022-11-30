@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import App from "./App";
 import Intro from "./pages/Introduccion";
 import Redirect from "./utils/Redirect";
@@ -52,7 +52,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter basename="/">
       <Routes>
         <Route index element={<Redirect />} />
         <Route path="/Introduccion" element={<App Element={<Intro />} />} />
@@ -197,6 +197,6 @@ root.render(
         <Route path="/team" element={<App Element={<Team />} />} />
         <Route path="/redes-sociales" element={<App Element={<Redes />} />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );

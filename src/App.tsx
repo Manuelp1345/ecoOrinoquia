@@ -470,19 +470,8 @@ export const App = ({
         marginTop={3}
         marginLeft={1.5}
         noWrap
-      >
-        PLAY TO EARN
-      </Typography>
-      {[
-        "Orinoquia",
-        "Items",
-        "Recompensas",
-        "Modalidad de juego",
-        "Roi",
-        "Mercado",
-        "Tienda",
-        "Sostenibilidad financiera",
-      ].map((text, index) =>
+      ></Typography>
+      {["Tienda", "Sostenibilidad financiera"].map((text, index) =>
         text === "Modalidad de juego" ? (
           <>
             <ListItem key={text} disablePadding>
@@ -604,11 +593,7 @@ export const App = ({
       <ListItem key={"Team"} disablePadding>
         <ListItemButton onClick={() => navigate("/team")}>
           <ListItemIcon>
-            <Box
-              component={"img"}
-              width={35}
-              src="/img/Group 34.svg"
-            ></Box>
+            <Box component={"img"} width={35} src="/img/Group 34.svg"></Box>
           </ListItemIcon>
           <ListItemText id="team" primary="Team" sx={{ color: "white" }} />
         </ListItemButton>
@@ -616,11 +601,7 @@ export const App = ({
       <ListItem key={"Redes sociales"} sx={{ marginBottom: 5 }} disablePadding>
         <ListItemButton onClick={() => navigate("/redes-sociales")}>
           <ListItemIcon>
-            <Box
-              component={"img"}
-              width={35}
-              src="/img/Group 35.svg"
-            ></Box>
+            <Box component={"img"} width={35} src="/img/Group 35.svg"></Box>
           </ListItemIcon>
           <ListItemText
             id="redes-sociales"
